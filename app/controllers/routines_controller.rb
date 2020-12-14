@@ -10,8 +10,8 @@ class RoutinesController < ApplicationController
     end
 
     def create
-        new_routine = Routine.create(routine_params)
-        render json: new_routine
+        routine = Routine.create(routine_params)
+        render json: routine
 
         # To be consumed in the front-end like so:
         # fetch('http://localhost:3000/routines', {
