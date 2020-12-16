@@ -21,6 +21,11 @@ class WorkoutRoutineObjsController < ApplicationController
         render json: workout_routine_obj
     end
 
+    def destroy
+        workout_routine_obj = WorkoutRoutineObj.find(params[:id])
+        workout_routine_obj.destroy
+    end
+
     private
 
     def workout_routine_obj_params

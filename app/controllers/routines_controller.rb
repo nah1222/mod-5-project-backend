@@ -1,7 +1,7 @@
 class RoutinesController < ApplicationController
     def index
         routines = Routine.all
-        render json: routines
+        render json: routines, include: 'workout_routine_objs'
     end
 
     def show
@@ -53,6 +53,11 @@ class RoutinesController < ApplicationController
         # })
         # .then(r=>r.json())
         # .then(console.log)
+    end
+
+    def destroy
+        routine = Routine.find(params[:id])
+        routine.destroy
     end
     
     private
