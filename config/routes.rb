@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   # post '/workouts', to: 'workouts#create'
   # put '/workouts/:id', to: 'workouts#update'
 
+  resources :users, only: [:index, :show, :create, :update, :destroy]
+
 end
