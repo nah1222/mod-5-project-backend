@@ -1,4 +1,5 @@
 class RoutinesController < ApplicationController
+    
     def index
         routines = Routine.all
         render json: routines, include: 'workout_routine_objs'
