@@ -1,4 +1,5 @@
 class WorkoutRoutineObjsController < ApplicationController
+    skip_before_action :verify_authenticity_token
 
     def index
         workout_routine_objs = WorkoutRoutineObj.all

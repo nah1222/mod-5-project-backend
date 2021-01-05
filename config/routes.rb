@@ -21,8 +21,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :create, :update, :destroy]
 
-  post "/login", to: "application#login"
-  get "/auto_login", to: "application#auto_login"
+  post "/login", to: "sessions#login", as: 'login'
+  get "/auto_login", to: "sessions#auto_login"
   get "/user_is_authed", to: "application#user_is_authed"
 
 end

@@ -1,5 +1,6 @@
 class WorkoutsController < ApplicationController
-
+    skip_before_action :verify_authenticity_token
+    
     def index
         workouts = Workout.all
         render json: workouts
